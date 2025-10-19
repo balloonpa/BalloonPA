@@ -29,14 +29,14 @@ const BRAND = {
 /** ========= DATA (ตัวอย่าง) ========= */
 const products = [
   // Recommendation - Balloon
-  { id: 1, name: "Balloon Set (S)", price: "23,990", image: "/recommended_b1.jpg", category: "Recommendation", sub: "Balloon Set" },
-  { id: 2, name: "Balloon Set (M)", price: "23,990", image: "/recommended_b2.jpg", category: "Recommendation", sub: "Balloon Set" },
-  { id: 3, name: "Balloon Set (L)", price: "23,990", image: "/recommended_b3.jpg", category: "Recommendation", sub: "Balloon Set" },
+  { id: 1, name: "Balloon Set (S)", price: "23,990", image: "/recommended-b1.jpg", category: "Recommendation", sub: "Balloon Set" },
+  { id: 2, name: "Balloon Set (M)", price: "23,990", image: "/recommended-b2.jpg", category: "Recommendation", sub: "Balloon Set" },
+  { id: 3, name: "Balloon Set (L)", price: "23,990", image: "/recommended-b3.jpg", category: "Recommendation", sub: "Balloon Set" },
 
   // Recommendation - Event
-  { id: 4, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/recommended_e1.jpg", category: "Recommendation", sub: "Event Set" },
-  { id: 5, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/recommended_e2.jpg", category: "Recommendation", sub: "Event Set" },
-  { id: 6, name: "Backdrop", price: 150, image: "/recommended_e3.jpg", category: "Recommendation", sub: "Event Set" },
+  { id: 4, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/recommended-e1.jpg", category: "Recommendation", sub: "Event Set" },
+  { id: 5, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/recommended-e2.jpg", category: "Recommendation", sub: "Event Set" },
+  { id: 6, name: "Backdrop", price: 150, image: "/recommended-e3.jpg", category: "Recommendation", sub: "Event Set" },
 
 
 
@@ -74,9 +74,9 @@ const products = [
 
   // Occasion - Event
   { id: 33, name: "Balloon Set", price: "23,990", image: "/event-balloon-set.jpg", category: "Occasion", sub: "Event" },
-  { id: 34, name: "Grand Openning Balloon", price: "23,990", image: "/1_grand-openning-balloon.jpg", category: "Occasion", sub: "Event" },
-  { id: 35, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/2_grand-openning-balloon.jpg", category: "Occasion", sub: "Event" },
-  { id: 36, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/2_grand-openning-balloon_connected.jpg", category: "Occasion", sub: "Event" },
+  { id: 34, name: "Grand Openning Balloon", price: "23,990", image: "/1-grand-openning-balloon.jpg", category: "Occasion", sub: "Event" },
+  { id: 35, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/2-grand-openning-balloon.jpg", category: "Occasion", sub: "Event" },
+  { id: 36, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/2-grand-openning-balloon_connected.jpg", category: "Occasion", sub: "Event" },
   { id: 37, name: "Event Backdrop", price: "23,990", image: "/event-backdrop.jpg", category: "Occasion", sub: "Event" },
   { id: 38, name: "Balloon Arch", price: "23,990", image: "/event-balloon-arch.jpg", category: "Occasion", sub: "Event" },
   { id: 39, name: "Flower Bouquet Balloon", price: "23,990", image: "/event-flower-balloon.jpg", category: "Occasion", sub: "Event" },
@@ -134,9 +134,9 @@ const products = [
 
   // For Who - Corporate
   { id: 76, name: "Balloon Set", price: "23,990", image: "/corp-balloon-set.jpg", category: "For Who", sub: "Corporate" },
-  { id: 77, name: "Grand Openning Balloon", price: "23,990", image: "/1_corp-balloon.jpg", category: "For Who", sub: "Corporate" },
-  { id: 78, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/2_corp-balloon.jpg", category: "For Who", sub: "Corporate" },
-  { id: 79, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/2_corp-balloon_connected.jpg", category: "For Who", sub: "Corporate" },
+  { id: 77, name: "Grand Openning Balloon", price: "23,990", image: "/1-corp-balloon.jpg", category: "For Who", sub: "Corporate" },
+  { id: 78, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/2-corp-balloon.jpg", category: "For Who", sub: "Corporate" },
+  { id: 79, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/2-corp-balloon_connected.jpg", category: "For Who", sub: "Corporate" },
   { id: 80, name: "Event Backdrop", price: "23,990", image: "/corp-backdrop.jpg", category: "For Who", sub: "Corporate" },
   { id: 81, name: "Balloon Arch", price: "23,990", image: "/corp-balloon-arch.jpg", category: "For Who", sub: "Corporate" },
   { id: 82, name: "Flower Bouquet Balloon", price: "23,990", image: "/corp-flower-balloon.jpg", category: "For Who", sub: "Corporate" },
