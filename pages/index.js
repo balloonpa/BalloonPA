@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 /** ========= BRAND / CONTACT ========= */
 const BRAND = {
   name: "Balloonpa",
-  logoSrc: "/Balloonpa-logo.png",
+  logoSrc: "/balloonpa-logo.png",
   colors: {
     pink: "#FF8FB4",
     blue: "#6EC8F0",
@@ -29,127 +29,127 @@ const BRAND = {
 /** ========= DATA (ตัวอย่าง) ========= */
 const products = [
   // Recommendation - Balloon
-  { id: 1, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "Recommendation", sub: "Balloon Set" },
-  { id: 2, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "Recommendation", sub: "Balloon Set" },
-  { id: 3, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "Recommendation", sub: "Balloon Set" },
+  { id: 1, name: "Balloon Set (S)", price: "23,990", image: "/recommended_b1.jpg", category: "Recommendation", sub: "Balloon Set" },
+  { id: 2, name: "Balloon Set (M)", price: "23,990", image: "/recommended_b2.jpg", category: "Recommendation", sub: "Balloon Set" },
+  { id: 3, name: "Balloon Set (L)", price: "23,990", image: "/recommended_b3.jpg", category: "Recommendation", sub: "Balloon Set" },
 
   // Recommendation - Event
-  { id: 4, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "2_Grand Openning Balloon.jpg", category: "Recommendation", sub: "Event Set" },
-  { id: 5, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "2_Grand Openning Balloon_connected.jpg", category: "Recommendation", sub: "Event Set" },
-  { id: 6, name: "Backdrop", price: 150, image: "/BD Backdrop.jpg", category: "Recommendation", sub: "Event Set" },
+  { id: 4, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/recommended_e1.jpg", category: "Recommendation", sub: "Event Set" },
+  { id: 5, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/recommended_e2.jpg", category: "Recommendation", sub: "Event Set" },
+  { id: 6, name: "Backdrop", price: 150, image: "/recommended_e3.jpg", category: "Recommendation", sub: "Event Set" },
 
 
 
   // Occasion - Birthday
-  { id: 7, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "Occasion", sub: "Birthday" },
-  { id: 8, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "Occasion", sub: "Birthday" },
-  { id: 9, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "Occasion", sub: "Birthday" },
-  { id: 10, name: "Birthday Set", price: "23,990", image: "/BD Set.jpg", category: "Occasion", sub: "Birthday" },
-  { id: 11, name: "BD Backdrop", price: "23,990", image: "/BD Backdrop.jpg", category: "Occasion", sub: "Birthday" },
-  { id: 12, name: "Flower Bouquet Balloon", price: "23,990", image: "/Flower Balloon.jpg", category: "Occasion", sub: "Birthday" },
-  { id: 13, name: "HBD Balloon", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Birthday" }, // Foil Balloon "Happy Birthday"
-  { id: 14, name: "Age Balloon", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Birthday" }, // Foil Balloon ตัวเลขตามอายุ
-  { id: 15, name: "HBD & Age Balloon", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Birthday" }, // Foil Balloon "Happy Birthday" + ตัวเลขตามอายุ
-  { id: 16, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Birthday" }, // ช่อดอกไม้
-  { id: 17, name: "Extra Gift - Cake", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Birthday" }, // Cake
-  { id: 18, name: "Extra Gift - Teddy", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Birthday" }, // ตุ๊กตา
+  { id: 7, name: "Balloon Set (S)", price: "23,990", image: "/bd-balloon-set-s.jpg", category: "Occasion", sub: "Birthday" },
+  { id: 8, name: "Balloon Set (M)", price: "23,990", image: "/bd-balloon-set-m.jpg", category: "Occasion", sub: "Birthday" },
+  { id: 9, name: "Balloon Set (L)", price: "23,990", image: "/bd-balloon-set-l.jpg", category: "Occasion", sub: "Birthday" },
+  { id: 10, name: "Birthday Set", price: "23,990", image: "/bd-set.jpg", category: "Occasion", sub: "Birthday" },
+  { id: 11, name: "BD Backdrop", price: "23,990", image: "/bd-backdrop.jpg", category: "Occasion", sub: "Birthday" },
+  { id: 12, name: "Flower Bouquet Balloon", price: "23,990", image: "/bd-flower-balloon.jpg", category: "Occasion", sub: "Birthday" },
+  { id: 13, name: "HBD Balloon", price: "23,990", image: "/hbd-foil.jpg", category: "Occasion", sub: "Birthday" }, 
+  { id: 14, name: "Age Balloon", price: "23,990", image: "/age-foil.jpg", category: "Occasion", sub: "Birthday" }, 
+  { id: 15, name: "HBD & Age Balloon", price: "23,990", image: "/bd-foil.jpg", category: "Occasion", sub: "Birthday" }, 
+  { id: 16, name: "Extra Gift - Flower", price: "23,990", image: "/bd-flower.jpg", category: "Occasion", sub: "Birthday" }, 
+  { id: 17, name: "Extra Gift - Teddy", price: "23,990", image: "/bd-teddy.jpg", category: "Occasion", sub: "Birthday" }, 
 
   // Occasion - Graduation
-  { id: 19, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "Occasion", sub: "Graduation" },
-  { id: 20, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "Occasion", sub: "Graduation" },
-  { id: 21, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "Occasion", sub: "Graduation" },
-  { id: 22, name: "Graduation Backdrop", price: "23,990", image: "/Graduation Backdrop.jpg", category: "Occasion", sub: "Graduation" }, 
-  { id: 23, name: "Flower Bouquet Balloon", price: "23,990", image: "/Flower Balloon.jpg", category: "Occasion", sub: "Graduation" },
-  { id: 24, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Graduation" }, // ช่อดอกไม้
-  { id: 25, name: "Extra Gift - Teddy", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Birthday" }, // ตุ๊กตา
+  { id: 18, name: "Balloon Set (S)", price: "23,990", image: "/grad-balloon-set-s.jpg", category: "Occasion", sub: "Graduation" },
+  { id: 19, name: "Balloon Set (M)", price: "23,990", image: "/grad-balloon-set-m.jpg", category: "Occasion", sub: "Graduation" },
+  { id: 20, name: "Balloon Set (L)", price: "23,990", image: "/grad-balloon-set-l.jpg", category: "Occasion", sub: "Graduation" },
+  { id: 21, name: "Graduation Backdrop", price: "23,990", image: "/graduation-backdrop.jpg", category: "Occasion", sub: "Graduation" }, 
+  { id: 22, name: "Flower Bouquet Balloon", price: "23,990", image: "/grad-flower-balloon.jpg", category: "Occasion", sub: "Graduation" },
+  { id: 23, name: "Extra Gift - Flower", price: "23,990", image: "/grad-flower.jpg", category: "Occasion", sub: "Graduation" },
+  { id: 24, name: "Extra Gift - Teddy", price: "23,990", image: "/grad-teddy.jpg", category: "Occasion", sub: "Birthday" }, 
 
   // Occasion - Wedding
-  { id: 26, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "Occasion", sub: "Wedding" },
-  { id: 27, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "Occasion", sub: "Wedding" },
-  { id: 28, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "Occasion", sub: "Wedding" },
-  { id: 29, name: "Wedding Set", price: "23,990", image: "/Wedding Set.jpg", category: "Occasion", sub: "Wedding" },
-  { id: 30, name: "Balloon Photo Corner", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Wedding" }, // Balloon Backdrop งานแต่ง
-  { id: 31, name: "Flower Bouquet Balloon", price: "23,990", image: "/Flower Balloon.jpg", category: "Occasion", sub: "Wedding" },
-  { id: 32, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Wedding" }, // ช่อดอกไม้
-  { id: 33, name: "Extra Gift - Teddy", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Wedding" }, // ตุ๊กตา
+  { id: 25, name: "Balloon Set (S)", price: "23,990", image: "/wedding-balloon-set-s.jpg", category: "Occasion", sub: "Wedding" },
+  { id: 26, name: "Balloon Set (M)", price: "23,990", image: "/wedding-balloon-set-m.jpg", category: "Occasion", sub: "Wedding" },
+  { id: 27, name: "Balloon Set (L)", price: "23,990", image: "/wedding-balloon-set-l.jpg", category: "Occasion", sub: "Wedding" },
+  { id: 28, name: "Wedding Set", price: "23,990", image: "/wedding-set.jpg", category: "Occasion", sub: "Wedding" },
+  { id: 29, name: "Balloon Photo Corner", price: "23,990", image: "/wedding-backdrop.jpg", category: "Occasion", sub: "Wedding" },
+  { id: 30, name: "Flower Bouquet Balloon", price: "23,990", image: "/wedding-flower-balloon.jpg", category: "Occasion", sub: "Wedding" },
+  { id: 31, name: "Extra Gift - Flower", price: "23,990", image: "/wedding-flower.jpg", category: "Occasion", sub: "Wedding" }, 
+  { id: 32, name: "Extra Gift - Teddy", price: "23,990", image: "/wedding-teddy.jpg", category: "Occasion", sub: "Wedding" }, 
 
   // Occasion - Event
-  { id: 34, name: "Balloon Set", price: "23,990", image: "/Event Balloon Set.jpg", category: "Occasion", sub: "Event" },
-  { id: 35, name: "Grand Openning Balloon", price: "23,990", image: "/1_Grand Openning Balloon.jpg", category: "Occasion", sub: "Event" },
-  { id: 36, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "2_Grand Openning Balloon.jpg", category: "Occasion", sub: "Event" },
-  { id: 37, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "2_Grand Openning Balloon_connected.jpg", category: "Occasion", sub: "Event" },
-  { id: 38, name: "Event Backdrop", price: "23,990", image: "/Event Backdrop.jpg", category: "Occasion", sub: "Event" },
-  { id: 39, name: "Balloon Arch", price: "23,990", image: "/Balloon Arch.jpg", category: "Occasion", sub: "Event" },
-  { id: 40, name: "Flower Bouquet Balloon", price: "23,990", image: "/Flower Balloon.jpg", category: "Occasion", sub: "Event" },
-  { id: 41, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Event" }, // ช่อดอกไม้
+  { id: 33, name: "Balloon Set", price: "23,990", image: "/event-balloon-set.jpg", category: "Occasion", sub: "Event" },
+  { id: 34, name: "Grand Openning Balloon", price: "23,990", image: "/1_grand-openning-balloon.jpg", category: "Occasion", sub: "Event" },
+  { id: 35, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/2_grand-openning-balloon.jpg", category: "Occasion", sub: "Event" },
+  { id: 36, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/2_grand-openning-balloon_connected.jpg", category: "Occasion", sub: "Event" },
+  { id: 37, name: "Event Backdrop", price: "23,990", image: "/event-backdrop.jpg", category: "Occasion", sub: "Event" },
+  { id: 38, name: "Balloon Arch", price: "23,990", image: "/event-balloon-arch.jpg", category: "Occasion", sub: "Event" },
+  { id: 39, name: "Flower Bouquet Balloon", price: "23,990", image: "/event-flower-balloon.jpg", category: "Occasion", sub: "Event" },
+  { id: 40, name: "Extra Gift - Flower", price: "23,990", image: "/event-flower.jpg", category: "Occasion", sub: "Event" }, 
 
   // Occasion - Welcome Baby
-  { id: 42, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "Occasion", sub: "Welcome Baby" },
-  { id: 43, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "Occasion", sub: "Welcome Baby" },
-  { id: 44, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "Occasion", sub: "Welcome Baby" },
-  { id: 45, name: "Birthday Set", price: "23,990", image: "/BD Set.jpg", category: "Occasion", sub: "Welcome Baby" },
-  { id: 46, name: "Welcome Baby Photo Corner", price: "23,990", image: "/Baby Shower Backdrop.jpg", category: "Occasion", sub: "Welcome Baby" },
-  { id: 47, name: "Mystery Box", price: "23,990", image: "/Mystery Box.jpg", category: "Occasion", sub: "Welcome Baby" },
+  { id: 41, name: "Balloon Set (S)", price: "23,990", image: "/baby-balloon-set-s.jpg", category: "Occasion", sub: "Welcome Baby" },
+  { id: 42, name: "Balloon Set (M)", price: "23,990", image: "/baby-balloon-set-m.jpg", category: "Occasion", sub: "Welcome Baby" },
+  { id: 43, name: "Balloon Set (L)", price: "23,990", image: "/baby-balloon-set-l.jpg", category: "Occasion", sub: "Welcome Baby" },
+  { id: 44, name: "Welcome Baby Set", price: "23,990", image: "/baby-set.jpg", category: "Occasion", sub: "Welcome Baby" },
+  { id: 45, name: "Welcome Baby Photo Corner", price: "23,990", image: "/baby-backdrop.jpg", category: "Occasion", sub: "Welcome Baby" },
+  { id: 46, name: "Mystery Box", price: "23,990", image: "/baby-mystery-box.jpg", category: "Occasion", sub: "Welcome Baby" },
 
   // Occasion - Special Days & Festival
-  { id: 48, name: "V-Day Balloon Set", price: "23,990", image: "/V-Day Balloon.jpg", category: "Occasion", sub: "Event" },
-  { id: 49, name: "Special Event Backdrop", price: "23,990", image: "/Special Backdrop.jpg", category: "Occasion", sub: "Special Days & Festival" },
-  { id: 50, name: "Special Balloon Arch", price: "23,990", image: "/Festival Balloon Arch.jpg", category: "Occasion", sub: "Special Days & Festival" },
-  { id: 51, name: "Special Flower Bouquet Balloon", price: "23,990", image: "/Festival Flower Balloon.jpg", category: "Occasion", sub: "Special Days & Festival" },
-  { id: 52, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "Occasion", sub: "Special Days & Festival" }, // ช่อดอกไม้
+  { id: 47, name: "V-Day Balloon Set", price: "23,990", image: "/v-day-balloon.jpg", category: "Occasion", sub: "Event" },
+  { id: 48, name: "Special Event Backdrop", price: "23,990", image: "/special-backdrop.jpg", category: "Occasion", sub: "Special Days & Festival" },
+  { id: 49, name: "Special Balloon Arch", price: "23,990", image: "/festival-balloon-arch.jpg", category: "Occasion", sub: "Special Days & Festival" },
+  { id: 50, name: "Special Flower Bouquet Balloon", price: "23,990", image: "/festival-flower-balloon.jpg", category: "Occasion", sub: "Special Days & Festival" },
+  { id: 51, name: "Extra Gift - Flower", price: "23,990", image: "/special-flower.jpg", category: "Occasion", sub: "Special Days & Festival" }, 
 
 
 
   // For Who - Couple
-  { id: 53, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "For Who", sub: "Couple" },
-  { id: 54, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "For Who", sub: "Couple" },
-  { id: 55, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "For Who", sub: "Couple" },
-  { id: 56, name: "Anniversary Set", price: "23,990", image: "/Wedding Set.jpg", category: "For Who", sub: "Couple" },
-  { id: 57, name: "Anniversary Balloon", price: "23,990", image: "/xxx.jpg", category: "For Who", sub: "Couple" }, // Foil Balloon "Happy Anniversary"
-  { id: 58, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "For Who", sub: "Couple" }, // ช่อดอกไม้
-  { id: 59, name: "Extra Gift - Teddy", price: "23,990", image: "/xxx.jpg", category: "For Who", sub: "Couple" }, // ตุ๊กตา
+  { id: 52, name: "Balloon Set (S)", price: "23,990", image: "/couple-balloon-set-s.jpg", category: "For Who", sub: "Couple" },
+  { id: 53, name: "Balloon Set (M)", price: "23,990", image: "/couple-balloon-set-m.jpg", category: "For Who", sub: "Couple" },
+  { id: 54, name: "Balloon Set (L)", price: "23,990", image: "/couple-balloon-set-l.jpg", category: "For Who", sub: "Couple" },
+  { id: 55, name: "Anniversary Set", price: "23,990", image: "/anniversary-set.jpg", category: "For Who", sub: "Couple" },
+  { id: 56, name: "Flower Bouquet Balloon", price: "23,990", image: "/couple-flower-balloon.jpg", category: "For Who", sub: "Couple" },
+  { id: 57, name: "D Kan Na Balloon Box", price: "23,990", image: "/d-kan-balloon-box.jpg", category: "For Who", sub: "Couple" },
+  { id: 58, name: "Anniversary Balloon", price: "23,990", image: "/anniversary-foil.jpg", category: "For Who", sub: "Couple" },
+  { id: 59, name: "Extra Gift - Flower", price: "23,990", image: "/couple-flower.jpg", category: "For Who", sub: "Couple" },
+  { id: 60, name: "Extra Gift - Teddy", price: "23,990", image: "/couple-teddy.jpg", category: "For Who", sub: "Couple" }, 
 
   // For Who - Friend
-  { id: 60, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "For Who", sub: "Friend" },
-  { id: 61, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "For Who", sub: "Friend" },
-  { id: 62, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "For Who", sub: "Friend" },
-  { id: 63, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "For Who", sub: "Friend" }, // ช่อดอกไม้
-  { id: 64, name: "Extra Gift - Teddy", price: "23,990", image: "/xxx.jpg", category: "For Who", sub: "Friend" }, // ตุ๊กตา
+  { id: 61, name: "Balloon Set (S)", price: "23,990", image: "/friend-balloon-set-s.jpg", category: "For Who", sub: "Friend" },
+  { id: 62, name: "Balloon Set (M)", price: "23,990", image: "/friend-balloon-set-m.jpg", category: "For Who", sub: "Friend" },
+  { id: 63, name: "Balloon Set (L)", price: "23,990", image: "/friend-balloon-set-l.jpg", category: "For Who", sub: "Friend" },
+  { id: 64, name: "Extra Gift - Flower", price: "23,990", image: "/friend-flower.jpg", category: "For Who", sub: "Friend" }, 
+
 
   // For Who - Parent and Kid
-  { id: 65, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "For Who", sub: "Parent and Kid" },
-  { id: 66, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "For Who", sub: "Parent and Kid" },
-  { id: 67, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "For Who", sub: "Parent and Kid" },
-  { id: 68, name: "Birthday Set", price: "23,990", image: "/BD Set.jpg", category: "For Who", sub: "Parent and Kid" },
-  { id: 69, name: "Welcome Baby Photo Corner", price: "23,990", image: "/Baby Shower Backdrop.jpg", category: "For Who", sub: "Parent and Kid" },
-  { id: 70, name: "Cartoon Balloon", price: "23,990", image: "/xxx.jpg", category: "For Who", sub: "Parent and Kid" }, // Foil Balloon รูป Cartoon
-  { id: 71, name: "Cartoon Sculpter Balloon", price: "23,990", image: "/xxx.jpg", category: "For Who", sub: "Parent and Kid" }, // Balloon หลายรูปประกอบกันเป็นรูป Cartoon / Animal
-  { id: 72, name: "Mystery Box", price: "23,990", image: "/Mystery Box.jpg", category: "For Who", sub: "Parent and Kid" },
-
-  // For Who - Corporate
-  { id: 73, name: "Balloon Set", price: "23,990", image: "/Event Balloon Set.jpg", category: "For Who", sub: "Corporate" },
-  { id: 74, name: "Grand Openning Balloon", price: "23,990", image: "/1_Grand Openning Balloon.jpg", category: "For Who", sub: "Corporate" },
-  { id: 75, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "2_Grand Openning Balloon.jpg", category: "For Who", sub: "Corporate" },
-  { id: 76, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "2_Grand Openning Balloon_connected.jpg", category: "For Who", sub: "Corporate" },
-  { id: 77, name: "Event Backdrop", price: "23,990", image: "/Event Backdrop.jpg", category: "For Who", sub: "Corporate" },
-  { id: 78, name: "Balloon Arch", price: "23,990", image: "/Balloon Arch.jpg", category: "For Who", sub: "Corporate" },
-  { id: 79, name: "Flower Bouquet Balloon", price: "23,990", image: "/Flower Balloon.jpg", category: "For Who", sub: "Corporate" },
-  { id: 80, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "For Who", sub: "Corporate" }, // ช่อดอกไม้
-
-  // Supplies - Accessory
-  { id: 81, name: "Letter Balloon", price: "23,990", image: "/xxx.jpg", category: "Supplies", sub: "Accessory" }, // Foil Balloon ตัวหนังสือ
-  { id: 82, name: "Age Balloon", price: "23,990", image: "/xxx.jpg", category: "Supplies", sub: "Accessory" }, // Foil Balloon ตัวเลข
-
-  // Supplies - Extra Gift
-  { id: 83, name: "Extra Gift - Flower", price: "23,990", image: "/xxx.jpg", category: "Supplies", sub: "Extra Gift" }, // ช่อดอกไม้
-  { id: 84, name: "Extra Gift - Cake", price: "23,990", image: "/xxx.jpg", category: "Supplies", sub: "Extra Gift" }, // Cake
-  { id: 85, name: "Extra Gift - Teddy", price: "23,990", image: "/xxx.jpg", category: "Supplies", sub: "Extra Gift" }, // ตุ๊กตา
-  { id: 86, name: "Mystery Box", price: "23,990", image: "/Mystery Box.jpg", category: "Supplies", sub: "Extra Gift" },
+  { id: 65, name: "Balloon Set (S)", price: "23,990", image: "/family-balloon-set-s.jpg", category: "For Who", sub: "Parent and Kid" },
+  { id: 66, name: "Balloon Set (M)", price: "23,990", image: "/family-balloon-set-m.jpg", category: "For Who", sub: "Parent and Kid" },
+  { id: 67, name: "Balloon Set (L)", price: "23,990", image: "/family-balloon-set-l.jpg", category: "For Who", sub: "Parent and Kid" },
+  { id: 68, name: "Family Set", price: "23,990", image: "/family-set.jpg", category: "For Who", sub: "Parent and Kid" },
+  { id: 69, name: "Family Photo Corner", price: "23,990", image: "/family-backdrop.jpg", category: "For Who", sub: "Parent and Kid" },
+  { id: 70, name: "Cartoon Balloon", price: "23,990", image: "/cartoon-foil.jpg", category: "For Who", sub: "Parent and Kid" },
+  { id: 71, name: "Cartoon Sculpture Balloon", price: "23,990", image: "/cartoon-sculpture.jpg", category: "For Who", sub: "Parent and Kid" },
+  { id: 72, name: "Mystery Box", price: "23,990", image: "/family-mystery-box.jpg", category: "For Who", sub: "Parent and Kid" },
 
   // For Who - Patient
-  { id: 53, name: "Balloon Set (S)", price: "23,990", image: "/BD Balloon Set S.jpg", category: "For Who", sub: "Patient" },
-  { id: 54, name: "Balloon Set (M)", price: "23,990", image: "/BD Balloon Set M.jpg", category: "For Who", sub: "Patient" },
-  { id: 55, name: "Balloon Set (L)", price: "23,990", image: "/BD Balloon Set L.jpg", category: "For Who", sub: "Patient" },
+  { id: 73, name: "Balloon Set (S)", price: "23,990", image: "/hospital-balloon-set-s.jpg", category: "For Who", sub: "Patient" },
+  { id: 74, name: "Balloon Set (M)", price: "23,990", image: "/hospital-balloon-set-m.jpg", category: "For Who", sub: "Patient" },
+  { id: 75, name: "Balloon Set (L)", price: "23,990", image: "/hospital-balloon-set-l.jpg", category: "For Who", sub: "Patient" },
+
+  // For Who - Corporate
+  { id: 76, name: "Balloon Set", price: "23,990", image: "/corp-balloon-set.jpg", category: "For Who", sub: "Corporate" },
+  { id: 77, name: "Grand Openning Balloon", price: "23,990", image: "/1_corp-balloon.jpg", category: "For Who", sub: "Corporate" },
+  { id: 78, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/2_corp-balloon.jpg", category: "For Who", sub: "Corporate" },
+  { id: 79, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/2_corp-balloon_connected.jpg", category: "For Who", sub: "Corporate" },
+  { id: 80, name: "Event Backdrop", price: "23,990", image: "/corp-backdrop.jpg", category: "For Who", sub: "Corporate" },
+  { id: 81, name: "Balloon Arch", price: "23,990", image: "/corp-balloon-arch.jpg", category: "For Who", sub: "Corporate" },
+  { id: 82, name: "Flower Bouquet Balloon", price: "23,990", image: "/corp-flower-balloon.jpg", category: "For Who", sub: "Corporate" },
+  { id: 83, name: "Extra Gift - Flower", price: "23,990", image: "/corp-flower.jpg", category: "For Who", sub: "Corporate" }, 
+
+  // Supplies - Accessory
+  { id: 84, name: "Letter Balloon", price: "23,990", image: "/letter-foil.jpg", category: "Supplies", sub: "Accessory" }, // Foil Balloon ตัวหนังสือ
+  { id: 85, name: "Number Balloon", price: "23,990", image: "/number-foil.jpg", category: "Supplies", sub: "Accessory" }, // Foil Balloon ตัวเลข
+
+  // Supplies - Extra Gift
+  { id: 86, name: "Extra Gift - Flower", price: "23,990", image: "/flower.jpg", category: "Supplies", sub: "Extra Gift" },
+  { id: 87, name: "Extra Gift - Teddy", price: "23,990", image: "/teddy.jpg", category: "Supplies", sub: "Extra Gift" },
+  { id: 88, name: "Mystery Box", price: "23,990", image: "/mystery-box.jpg", category: "Supplies", sub: "Extra Gift" },
 ];
 
 const categories = [
