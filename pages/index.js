@@ -36,7 +36,7 @@ const products = [
   // Recommendation - Event
   { id: 4, name: "Grand Openning Balloon (Pair)", price: "23,990", image: "/recommended-e1.jpg", category: "Recommendation", sub: "Event Set" },
   { id: 5, name: "Grand Openning Balloon (Pair-Connect)", price: "23,990", image: "/recommended-e2.jpg", category: "Recommendation", sub: "Event Set" },
-  { id: 6, name: "Backdrop", price: 150, image: "/recommended-e3.jpg", category: "Recommendation", sub: "Event Set" },
+  { id: 6, name: "Backdrop", price: "150", image: "/recommended-e3.jpg", category: "Recommendation", sub: "Event Set" },
 
 
 
@@ -150,6 +150,17 @@ const products = [
   { id: 86, name: "Extra Gift - Flower", price: "23,990", image: "/flower.jpg", category: "Supplies", sub: "Extra Gift" },
   { id: 87, name: "Extra Gift - Teddy", price: "23,990", image: "/teddy.jpg", category: "Supplies", sub: "Extra Gift" },
   { id: 88, name: "Mystery Box", price: "23,990", image: "/mystery-box.jpg", category: "Supplies", sub: "Extra Gift" },
+
+
+  
+  // Recommendation - Promotion
+  { id: 89, name: "Birthday Set", price: "23,990", image: "/recommended-p1.jpg", category: "Recommendation", sub: "Promotion" },
+  { id: 90, name: "Anniversary Set", price: "23,990", image: "/recommended-p2.jpg", category: "Recommendation", sub: "Promotion" },
+  { id: 91, name: "Congratulations Set", price: "23,990", image: "/recommended-p3.jpg", category: "Recommendation", sub: "Promotion" },
+
+  // Recommendation - On a Budget
+  { id: 92, name: "500-baht Set", price: "500", image: "/recommended-bg1.jpg", category: "Recommendation", sub: "On a Budget Set" },
+  { id: 93, name: "1000-baht Set", price: "1,000", image: "/recommended-bg1.jpg", category: "Recommendation", sub: "On a Budget Set" }
 ];
 
 const categories = [
@@ -161,7 +172,7 @@ const categories = [
 
 // เมนูย่อยในแต่ละหมวด (ถ้าหมวดไหนยังไม่อยากแสดง sub ก็ใส่ [] ได้)
 const SUBCATS = {
-  "Recommendation": ["Promotion", "Balloon Set", "Event Set"],
+  "Recommendation": ["Promotion", "Balloon Set", "Event Set", "On a Budget Set"],
   "Occasion": ["Birthday", "Graduation", "Wedding", "Event", "Welcome Baby", "Special Days & Festival"], 
   "For Who": ["Couple", "Friend", "Parent and Kid", "Corporate","Patient"],
   "Supplies": ["Accessory", "Extra Gift"]
