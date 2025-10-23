@@ -677,7 +677,7 @@ export default function Balloonpa() {
     <div className="min-h-screen bg-white text-black">
       <Header />
       <Hero />
-      // <OccasionChips />
+      /* <OccasionChips /> */
       <Portfolio />
       <ShopSection />
       <Footer />
