@@ -319,7 +319,7 @@ function Hero() {
   );
 }
 
-function OccasionChips() {
+/*function OccasionChips() {
   return (
     <Container className="py-6">
       <div className="flex flex-wrap gap-3 justify-center">
@@ -331,7 +331,7 @@ function OccasionChips() {
       </div>
     </Container>
   );
-}
+}*/
 
 function Portfolio() {
   return (
@@ -677,7 +677,7 @@ export default function Balloonpa() {
     <div className="min-h-screen bg-white text-black">
       <Header />
       <Hero />
-      <OccasionChips />
+      // <OccasionChips />
       <Portfolio />
       <ShopSection />
       <Footer />
