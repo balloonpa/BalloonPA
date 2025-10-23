@@ -159,8 +159,9 @@ const products = [
   { id: 91, name: "Congratulations Set", price: "23,990", image: "/recommended-p3.jpg", category: "Recommendation", sub: "Promotion" },
 
   // Recommendation - On a Budget
-  { id: 92, name: "500-baht Set", price: "500", image: "/recommended-bg1.jpg", category: "Recommendation", sub: "On a Budget Set" },
-  { id: 93, name: "1000-baht Set", price: "1,000", image: "/recommended-bg1.jpg", category: "Recommendation", sub: "On a Budget Set" }
+  { id: 92, name: "On a Budget Set 1", price: "500", image: "/recommended-bg1.jpg", category: "Recommendation", sub: "On a Budget Set" },
+  { id: 93, name: "On a Budget Set 2", price: "1,000", image: "/recommended-bg1.jpg", category: "Recommendation", sub: "On a Budget Set" },
+  { id: 94, name: "Custom Set", price: "", image: "/recommended-bg1.jpg", category: "Recommendation", sub: "On a Budget Set" }
 ];
 
 const categories = [
