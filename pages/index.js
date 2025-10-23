@@ -489,7 +489,7 @@ const lineLinkFor = (p) =>
                     {p.sub ? ` · ${p.sub}` : ""}
                   </div>
                   <div className="font-semibold">{p.name}</div>
-                  <div className="font-bold mb-3">{p.price}฿</div>
+                  <div className="font-bold mb-3">{p.price} ฿</div>
                   <a
                     href={lineLinkFor(p)}
                     target="_blank"
