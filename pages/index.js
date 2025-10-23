@@ -257,7 +257,7 @@ function Hero() {
       <Container className="relative z-10 h-full flex items-center">
         <div className="max-w-3xl text-white">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 shadow border text-base mb-6 text-gray-800">
-            🎈 Premium Balloon & Party Decor
+            🎈 Premium Balloon & Party Decoration
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
             <span style={{ color: BRAND.colors.pink }}>Balloon</span>
