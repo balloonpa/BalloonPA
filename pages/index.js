@@ -161,7 +161,7 @@ const products = [
   // Recommendation - On a Budget
   { id: 92, name: "On a Budget Set 1", price: "500", image: "/recommended-bg1.jpg", category: "Recommendation", sub: "On a Budget Set" },
   { id: 93, name: "On a Budget Set 2", price: "1,000", image: "/recommended-bg2.jpg", category: "Recommendation", sub: "On a Budget Set" },
-  { id: 94, name: "Custom Set", image: "/recommended-bg3.jpg", category: "Recommendation", sub: "On a Budget Set" }
+  { id: 94, name: "Custom Set", price: "starting at 500", image: "/recommended-bg3.jpg", category: "Recommendation", sub: "On a Budget Set" }
 ];
 
 const categories = [
