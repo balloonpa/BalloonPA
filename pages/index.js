@@ -161,7 +161,7 @@ const categories = [
 
 // เมนูย่อยในแต่ละหมวด (ถ้าหมวดไหนยังไม่อยากแสดง sub ก็ใส่ [] ได้)
 const SUBCATS = {
-  "Recommendation": ["Balloon Set", "Event Set"],
+  "Recommendation": ["Promotion", "Balloon Set", "Event Set"],
   "Occasion": ["Birthday", "Graduation", "Wedding", "Event", "Welcome Baby", "Special Days & Festival"], 
   "For Who": ["Couple", "Friend", "Parent and Kid", "Corporate","Patient"],
   "Supplies": ["Accessory", "Extra Gift"]
