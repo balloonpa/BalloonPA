@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 /** ========= BRAND / CONTACT ========= */
 const BRAND = {
-  name: "Balloonpa",
+  name: "BalloonPA",
   logoSrc: "/balloonpa-logo.png",
   colors: {
     pink: "#FF8FB4",
