@@ -202,7 +202,7 @@ function Header() {
           <img src={BRAND.logoSrc} className="w-9 h-9 object-contain" alt="logo" />
           <div className="text-2xl font-extrabold">
             <span style={{ color: BRAND.colors.pink }}>Balloon</span>
-            <span style={{ color: BRAND.colors.blue }}>pa</span>
+            <span style={{ color: BRAND.colors.blue }}>PA</span>
           </div>
         </div>
 
