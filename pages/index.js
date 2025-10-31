@@ -533,7 +533,7 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          LINE Official
+          @balloonpa.th
         </a>
 
           <br />
