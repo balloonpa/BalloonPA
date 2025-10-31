@@ -261,7 +261,7 @@ function Hero() {
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
             <span style={{ color: BRAND.colors.pink }}>Balloon</span>
-            <span style={{ color: BRAND.colors.blue }}>pa</span>
+            <span style={{ color: BRAND.colors.blue }}>PA</span>
           </h1>
           <p className="mb-8 text-xl md:text-2xl leading-relaxed font-bold">
             รับจัดลูกโป่ง/ตกแต่งงานสำหรับ Birthday, Congratulation, Grand Opening,
@@ -520,7 +520,7 @@ function Footer() {
           <img src={BRAND.logoSrc} className="w-10 h-10 object-contain" alt="logo" />
           <div className="font-bold">
             <span style={{ color: BRAND.colors.pink }}>Balloon</span>
-            <span style={{ color: BRAND.colors.blue }}>pa</span>
+            <span style={{ color: BRAND.colors.blue }}>PA</span>
           </div>
         </div>
 
