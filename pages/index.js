@@ -264,7 +264,7 @@ function Hero() {
             <span style={{ color: BRAND.colors.blue }}>PA</span>
           </h1>
           <p className="mb-8 text-xl md:text-2xl leading-relaxed font-bold">
-            รับจัดลูกโป่ง/ตกแต่งงานสำหรับ Birthday, Congratulation, Grand Opening,
+            บริการจัดลูกโป่ง/ตกแต่งงานสำหรับ Birthday, Congratulation, Grand Opening,
             Bride to be และงาน Event — บริการส่ง/ติดตั้งทั่วกรุงเทพฯ
           </p>
           <div className="flex gap-4">
