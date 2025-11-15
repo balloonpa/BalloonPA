@@ -243,7 +243,7 @@ function Hero() {
           <img
             key={src}
             src={src}
-            alt="BalloonPA"
+            alt="Balloon Hero"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
               i === index ? "opacity-100" : "opacity-0"
             }`}
