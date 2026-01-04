@@ -1,6 +1,6 @@
 
 
-function OccasionChips() {
+/* function OccasionChips() {
   return (
     <Container className="py-6">
       <div className="flex flex-wrap gap-3 justify-center">
@@ -14,4 +14,4 @@ function OccasionChips() {
   );
 }
 
-export default OccasionChips
+export default OccasionChips */
