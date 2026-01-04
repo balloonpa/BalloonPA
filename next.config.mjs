@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   // สำคัญ: ให้ build ออกมาเป็นเว็บ static
-  output: 'export',
+  // output: 'export',
 
   // ถ้าใช้ <Image> ของ Next ให้ปิด optimizer (โฮสต์ shared ไม่มี image server)
   images: { unoptimized: true },
