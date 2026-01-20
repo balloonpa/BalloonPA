@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import SectionTitle from "@/components/SectionTitle";
 import { BRAND } from "@/data/brand";
+import NameUtil from "@/utils/name.util";
 import { useEffect, useState } from "react";
 
 function ShopSection() {
@@ -96,7 +97,7 @@ function ShopSection() {
           {categories.map((c) => (
             <Chip
               key={c}
-              label={c.split(".")[1]}
+              label={NameUtil.displayName(c)}
               active={c === cat}
               onClick={() => setCat(c)}
             />
@@ -116,7 +117,7 @@ function ShopSection() {
               <Chip
                 small
                 key={s}
-                label={s.split(".")[1]}
+                label={NameUtil.displayName(s)}
                 active={sub === s}
                 onClick={() => setSub(s)}
               />
@@ -138,13 +139,13 @@ function ShopSection() {
               >
                 <img
                   src={p.image}
-                  alt={p.name}
+                  alt={NameUtil.displayName(p.name)}
                   className="w-full aspect-[4/3] object-cover"
                 />
                 <div className="p-4">
                   <div className="text-xs text-gray-500 mb-1">
-                    {p.category}
-                    {p.sub ? ` · ${p.sub}` : ""}
+                    {NameUtil.displayName(p.category)}
+                    {p.sub ? ` · ${NameUtil.displayName(p.sub)}` : ""}
                   </div>
                   <div className="font-semibold">{p.name}</div>
                   <div className="font-bold mb-3">{p.price} ฿</div>
