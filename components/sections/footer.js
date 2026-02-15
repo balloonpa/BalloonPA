@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import { BRAND } from "@/data/brand";
+import Image from "next/image";
 
 function Footer() {
   return (
@@ -7,7 +8,14 @@ function Footer() {
       <Container className="py-8 grid md:grid-cols-3 gap-6 items-center">
         {/* โลโก้ + ชื่อแบรนด์ */}
         <div className="flex items-center gap-3">
-          <img src={BRAND.logoSrc} className="w-10 h-10 object-contain" alt="logo" />
+          <Image
+            src={BRAND.logoSrc}
+            fetchPriority="high"
+            className="w-10 h-10 object-contain"
+            width={0}
+            height={0}
+            alt="logo"
+          />
           <div className="font-bold">
             <span style={{ color: BRAND.colors.pink }}>Balloon</span>
             <span style={{ color: BRAND.colors.blue }}>PA</span>

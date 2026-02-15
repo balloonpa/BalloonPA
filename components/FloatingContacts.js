@@ -1,4 +1,5 @@
 import { BRAND } from "@/data/brand";
+import Image from "next/image";
 import { useState } from "react";
 
 /** ========= Floating “Contact us” ========= */
@@ -29,7 +30,7 @@ function FloatingContacts() {
         transform transition duration-300
         hover:scale-110 hover:shadow-2xl
         opacity-0 translate-y-2
-        ${open ? "" :"pointer-events-none"}
+        ${open ? "" : "pointer-events-none"}
         ${open ? "opacity-100 translate-y-0" : firstPress ? "contact-down" : ""}
       `}
       style={{ background: bg, transitionDelay: `${delay}ms` }}
@@ -78,7 +79,14 @@ function FloatingContacts() {
 
         {/* LINE */}
         <Item href={lineUrl} bg={BRAND.colors.line} title="LINE" delay={60}>
-          <img src="/line-icon.png" alt="LINE" className="w-6 h-6" />
+          <Image
+            fetchPriority="high"
+            src="/line-icon.png"
+            alt="LINE"
+            width={0}
+            height={0}
+            className="w-6 h-6"
+          />
         </Item>
 
         {/* Instagram (ถ้ามี) */}

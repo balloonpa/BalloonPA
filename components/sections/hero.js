@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import { BRAND } from "@/data/brand";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 function Hero() {
@@ -9,17 +10,20 @@ function Hero() {
   useEffect(() => {
     const t = setInterval(() => setIndex((i) => (i + 1) % images.length), 5000);
     return () => clearInterval(t);
-  }, []);
+  }, [images.length]);
 
   return (
     <section className="relative w-full h-[80vh] min-h-[560px] overflow-hidden">
       {/* ชั้นภาพสไลด์ */}
       <div className="absolute inset-0">
         {images.map((src, i) => (
-          <img
+          <Image
             key={src}
             src={src}
             alt="Balloon Hero"
+            fetchPriority="high"
+            width={0}
+            height={0}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"
               }`}
           />

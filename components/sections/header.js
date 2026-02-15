@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import { BRAND } from "@/data/brand";
+import Image from "next/image";
 
 /** ========= Sections ========= */
 function Header() {
@@ -10,7 +11,11 @@ function Header() {
           {/* <img src={BRAND.logoSrc} className="w-9 h-9 object-contain" alt="logo" /> */}
           <div >
 
-            <img
+            <Image
+              width={0}
+              height={0}
+              fetchPriority="high"
+              alt="BalloonPA"
               src={"/web_Icon.png"}
               className="w-40 object-cover pointer-events-none"
             />

@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import SectionTitle from "@/components/SectionTitle";
 import { BRAND } from "@/data/brand";
 import NameUtil from "@/utils/name.util";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 function ShopSection() {
@@ -15,7 +16,7 @@ function ShopSection() {
   const [products, setProducts] = useState([]);
 
   // รีเซ็ตเมนูย่อยเมื่อสลับหมวด
-  useEffect(() => {setSub("")}, [cat]);
+  useEffect(() => { setSub("") }, [cat]);
 
   useEffect(() => {
     initProducts();
@@ -88,7 +89,7 @@ function ShopSection() {
   });
 
   return (
-    <div id="shop">
+    <section id="shop">
       <Container className="py-12">
         <SectionTitle sub="เลือกหมวดหมู่เพื่อดูเซ็ตยอดนิยม">Shop</SectionTitle>
 
@@ -137,8 +138,11 @@ function ShopSection() {
                 key={p.id}
                 className="rounded-2xl border shadow-sm overflow-hidden bg-white text-black"
               >
-                <img
+                <Image
                   src={p.image}
+                  fetchPriority="high"
+                  width={0}
+                  height={0}
                   alt={NameUtil.displayName(p.name)}
                   className="w-full aspect-[4/3] object-cover"
                 />
@@ -164,7 +168,7 @@ function ShopSection() {
           </div>
         )}
       </Container>
-    </div>
+    </section>
   );
 }
 
