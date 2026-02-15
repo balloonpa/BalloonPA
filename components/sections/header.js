@@ -15,8 +15,9 @@ function Header() {
               width={0}
               height={0}
               fetchPriority="high"
+              loading="lazy"
               alt="BalloonPA"
-              src={"/web_Icon.png"}
+              src={"/web_Icon.webp"}
               className="w-40 object-cover pointer-events-none"
             />
             {/* <span style={{ color: BRAND.colors.pink }}>Balloon</span>

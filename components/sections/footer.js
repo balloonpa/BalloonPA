@@ -11,6 +11,7 @@ function Footer() {
           <Image
             src={BRAND.logoSrc}
             fetchPriority="high"
+            loading="lazy"
             className="w-10 h-10 object-contain"
             width={0}
             height={0}

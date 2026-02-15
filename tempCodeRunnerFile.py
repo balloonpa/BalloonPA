@@ -1,0 +1,2 @@
+athList = path.split("/")
+  # folde

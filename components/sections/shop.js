@@ -141,6 +141,7 @@ function ShopSection() {
                 <Image
                   src={p.image}
                   fetchPriority="high"
+                  loading="lazy"
                   width={0}
                   height={0}
                   alt={NameUtil.displayName(p.name)}

@@ -10,12 +10,12 @@ function Portfolio() {
         <SectionTitle sub="ผลงานบางส่วนจากลูกค้าจริง">Portfolio</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            "/portfolio1.jpg",
-            "/portfolio2.jpg",
-            "/portfolio3.jpg",
-            "/portfolio4.jpg",
-            "/portfolio5.jpg",
-            "/portfolio6.jpg",
+            "/portfolio1.webp",
+            "/portfolio2.webp",
+            "/portfolio3.webp",
+            "/portfolio4.webp",
+            "/portfolio5.webp",
+            "/portfolio6.webp",
           ].map((src, i) => (
             <div
               key={i}
@@ -25,6 +25,7 @@ function Portfolio() {
                 className="w-full object-cover aspect-[6/5] transition-transform duration-300 hover:scale-105"
                 alt={`portfolio ${i + 1}`}
                 fetchPriority="high"
+                loading="lazy"
                 src={src}
                 width={0}
                 height={0}

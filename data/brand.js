@@ -3,7 +3,7 @@
 
 const BRAND = {
   name: "BalloonPA",
-  logoSrc: "/balloonpa-logo.png",
+  logoSrc: "/balloonpa-logo.webp",
   colors: {
     pink: "#FF8FB4",
     blue: "#6EC8F0",

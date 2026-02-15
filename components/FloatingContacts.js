@@ -81,7 +81,8 @@ function FloatingContacts() {
         <Item href={lineUrl} bg={BRAND.colors.line} title="LINE" delay={60}>
           <Image
             fetchPriority="high"
-            src="/line-icon.png"
+            loading="lazy"
+            src="/line-icon.webp"
             alt="LINE"
             width={0}
             height={0}

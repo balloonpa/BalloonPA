@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 function Hero() {
-  const images = ["/hero-balloon.jpg", "/hero-balloon2.jpg", "/hero-balloon3.jpg"];
+  const images = ["/hero-balloon.webp", "/hero-balloon2.webp", "/hero-balloon3.webp"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -22,6 +22,7 @@ function Hero() {
             src={src}
             alt="Balloon Hero"
             fetchPriority="high"
+            loading="lazy"
             width={0}
             height={0}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === index ? "opacity-100" : "opacity-0"
@@ -40,7 +41,7 @@ function Hero() {
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
             {/* <img
-              src={"/web_Icon.png"}
+              src={"/web_Icon.webp"}
               className="md:w-120 w-100 object-cover pointer-events-none"
             /> */}
             <span style={{ color: BRAND.colors.pink }}>Balloon</span>
