@@ -7,5 +7,5 @@ function SectionTitle({ children, sub }) {
     </div>
   );
 }
-
-export default SectionTitle;
+ 
+export default SectionTitle; 
