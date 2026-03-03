@@ -27,6 +27,7 @@ export default function Balloonpa() {
           name="og:description"
           content="บริการจัดลูกโป่ง/ตกแต่งงานสำหรับ Birthday, Congratulation, Grand Opening, Bride to be และงาน Event — ร้านตั้งอยู่ย่านลาดพร้าว บริการส่ง/ติดตั้งทั่วกรุงเทพฯ"
         />
+        <link rel="preload"></link>
         
 
       </Head>

@@ -20,7 +20,7 @@ function FloatingContacts() {
 
   const Item = ({ href, bg, title, children, delay = 0 }) => (
     <a
-      href={open ? href : null}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       title={title}
@@ -81,7 +81,6 @@ function FloatingContacts() {
         <Item href={lineUrl} bg={BRAND.colors.line} title="LINE" delay={60}>
           <Image
             fetchPriority="high"
-            loading="lazy"
             src="/line-icon.webp"
             alt="LINE"
             width={0}
