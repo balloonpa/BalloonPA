@@ -4,10 +4,10 @@ import os
 
 import shutil
 
-dir_name = './public'
-new_dir_name = 'backupImg/public'
+dir_name = './img'
+new_dir_name = './img/new'
 root = Path(dir_name)
-extName = ".jpeg"
+extName = ".png"
 
 def convertToWebp(path):
   fullpathList = path.split("/")
@@ -40,8 +40,8 @@ def movefile(path):
 cnt = 0;
 for path in root.rglob("*" + extName):
   fullpath = path._raw_paths[0]
-  # convertToWebp(fullpath)
-  movefile(fullpath)
+  convertToWebp(fullpath)
+  # movefile(fullpath)
   cnt += 1
 
 print(cnt)
