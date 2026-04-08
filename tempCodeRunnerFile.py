@@ -1,2 +1,0 @@
-athList = path.split("/")
-  # folde
