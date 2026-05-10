@@ -15,7 +15,7 @@ function Footer() {
             className="w-10 h-10 object-contain"
             width={0}
             height={0}
-            alt="logo"
+            alt="BalloonPA Logo"
           />
           <div className="font-bold">
             <span style={{ color: BRAND.colors.pink }}>Balloon</span>

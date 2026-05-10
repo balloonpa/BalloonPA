@@ -5,31 +5,13 @@ import NameUtil from "@/utils/name.util";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-function ShopSection() {
+function ShopSection({ products, categories, subCategories }) {
 
-  const [categories, setCategories] = useState([]);
-  const [subCategories, setSubcategories] = useState({});
-
-  const [cat, setCat] = useState("");
+  const [cat, setCat] = useState(categories[0] ?? "");
   const [sub, setSub] = useState("");
-
-  const [products, setProducts] = useState([]);
 
   // รีเซ็ตเมนูย่อยเมื่อสลับหมวด
   useEffect(() => { setSub("") }, [cat]);
-
-  useEffect(() => {
-    initProducts();
-    return;
-  }, []);
-
-  const initProducts = async () => {
-    const prods = await fetch("/api/products").then(res => res.json());
-    setProducts(prods.products);
-    setCategories(prods.categories);
-    setSubcategories(prods.subCatagories);
-    setCat(prods.categories[0]);
-  }
 
   // ปุ่มแบบเดียวกับ "สั่งงาน"
   const Chip = ({ label, active, onClick, small = false }) => {
@@ -140,8 +122,6 @@ function ShopSection() {
               >
                 <Image
                   src={p.image}
-                  fetchPriority="high"
-                  loading="lazy"
                   width={0}
                   height={0}
                   alt={NameUtil.displayName(p.name)}
