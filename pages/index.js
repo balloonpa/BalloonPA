@@ -111,6 +111,7 @@ export default function Balloonpa({ initialCategories, initialSubCategories, ini
           content="บริการจัดลูกโป่ง/ตกแต่งงานสำหรับ Birthday, Congratulation, Grand Opening, Bride to be และงาน Event — ร้านตั้งอยู่ย่านลาดพร้าว บริการส่ง/ติดตั้งทั่วกรุงเทพฯ"
           key="desc"
         />
+        <meta name="google-site-verification" content="E3kT3Yu9KiDaCqhKga5o5IySXVr5u6Jv3PXbaLnc1zU" />
         {/* Open Graph */}
         <meta property="og:title" content="ร้านลูกโป่งลาดพร้าว 24 ชม. จัดส่งทั่วกรุงเทพฯ | BalloonPA" />
         <meta property="og:description" content="บริการจัดลูกโป่ง/ตกแต่งงานสำหรับ Birthday, Congratulation, Grand Opening, Bride to be และงาน Event — ร้านตั้งอยู่ย่านลาดพร้าว บริการส่ง/ติดตั้งทั่วกรุงเทพฯ" />

@@ -12,7 +12,7 @@ const OCCASIONS = [
 
 export default function OccasionsNav() {
   return (
-    <section className="py-12 border-b">
+    <section className="py-12 border-b hidden">
       <Container>
         <div className="text-center mb-8">
           <h2 className="text-2xl font-extrabold text-black">เลือกตามโอกาส</h2>
