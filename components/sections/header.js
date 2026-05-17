@@ -101,7 +101,7 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-6">
           {NAV_LINKS.map((link) =>
             link.dropdown ? (
-              <div key={link.label} className="relative group">
+              <div key={link.label} className="relative group flex items-center">
                 <Link href={link.href} className={linkClass(isActive(link))}>
                   {link.label}
                   <ChevronDown />
