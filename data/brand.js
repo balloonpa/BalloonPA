@@ -18,9 +18,8 @@ const BRAND = {
   socials: {
     instagram: "https://www.instagram.com/balloonpa.bkk.ladprao/",
     messenger: "https://web.facebook.com/profile.php?id=61580081014446&rdid=JPLB3NYdxV5KoGTf",
-    tiktok: "https://www.tiktok.com/@balloonpabkk",
-    maps: "",
-    lineUrl: "https://lin.ee/4rWUJv9", // ✅ ใช้ลิงก์สั้นแทน
+    tiktok: "https://www.tiktok.com/@balloonpabkk.ladprao",
+    lineUrl: "https://lin.ee/4rWUJv9",
   },
 };
 

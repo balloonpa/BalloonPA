@@ -120,8 +120,11 @@ export default function Balloonpa({ initialCategories, initialSubCategories, ini
         <meta property="og:title" content="ร้านลูกโป่ง จัดส่งทั่วกรุงเทพฯ 24 ชม. | BalloonPA" />
         <meta property="og:description" content="BalloonPA ร้านลูกโป่งกรุงเทพ เปิดตลอด 24 ชม. รับจัดงานนอกสถานที่ บริการจัดส่งและติดตั้งทั่วกรุงเทพ ออกแบบตามธีม ปรับได้ตามงบประมาณ ครอบคลุมพื่นที่รัชดา ลาดพร้าว เสนานิคม และสาทร" />
         <meta property="og:image" content="https://balloonpabkk.com/hero-balloon.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://balloonpabkk.com/" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="th_TH" />
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="ร้านลูกโป่ง จัดส่งทั่วกรุงเทพฯ 24 ชม. | BalloonPA" />

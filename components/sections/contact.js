@@ -204,7 +204,10 @@ export default function ContactSection() {
   );
 
   return (
-    <section id="contact" className="bg-white py-14 px-4">
+    <section id="contact" className="relative bg-white pt-8 pb-14 px-4">
+      <div className="absolute top-4 left-1/2 -translate-x-1/2">
+        <div className="h-[3px] w-36  rounded-full" style={{ background: BRAND.colors.pink }} />
+      </div>
       <div className="max-w-6xl mx-auto">
 
         {/* Section heading */}

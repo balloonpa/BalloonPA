@@ -144,7 +144,7 @@ function ShopSection({ products, categories, subCategories }) {
                     {NameUtil.displayName(p.category)}
                     {p.sub ? ` · ${NameUtil.displayName(p.sub)}` : ""}
                   </div>
-                  <div className="font-semibold">{p.name}</div>
+                  <h3 className="font-semibold">{p.name}</h3>
                   <div className="font-bold mb-3">{p.price} ฿</div>
                   <a
                     href={lineLinkFor(p)}
@@ -152,6 +152,8 @@ function ShopSection({ products, categories, subCategories }) {
                     rel="noopener noreferrer"
                     className="w-full inline-block text-center px-3 py-2 rounded-lg text-white shadow-lg transition hover:scale-[1.02]"
                     style={{ background: BRAND.colors.line }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = "#06C755"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = BRAND.colors.line; }}
                   >
                     แชทสั่งซื้อทาง LINE
                   </a>
