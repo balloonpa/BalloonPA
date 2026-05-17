@@ -29,11 +29,11 @@ const FAQ_ITEMS = [
   },
 ];
 
-export default function FaqSection() {
+export function FaqSection() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="py-16 bg-gray-50 hidden" id="faq">
+    <section className="py-16 bg-gray-50" id="faq">
       <Container>
         <div className="text-center mb-10">
           <h2 className="text-3xl font-extrabold text-black">คำถามที่พบบ่อย</h2>

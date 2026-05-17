@@ -3,15 +3,27 @@ import SectionTitle from "@/components/SectionTitle";
 import { BRAND } from "@/data/brand";
 import NameUtil from "@/utils/name.util";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 function ShopSection({ products, categories, subCategories }) {
 
   const [cat, setCat] = useState(categories[0] ?? "");
   const [sub, setSub] = useState("");
+  const router = useRouter();
 
-  // รีเซ็ตเมนูย่อยเมื่อสลับหมวด
-  useEffect(() => { setSub("") }, [cat]);
+
+  // อ่าน ?cat=&sub= จาก URL แล้วตั้งค่า filter
+  useEffect(() => {
+    if (!router.isReady) return;
+    const { cat: qCat, sub: qSub } = router.query;
+    if (qCat && categories.includes(qCat)) {
+      setCat(qCat);
+      if (qSub && subCategories[qCat]?.includes(qSub)) {
+        setSub(qSub);
+      }
+    }
+  }, [router.isReady, router.query.cat, router.query.sub]);
 
   // ปุ่มแบบเดียวกับ "สั่งงาน"
   const Chip = ({ label, active, onClick, small = false }) => {
@@ -82,7 +94,7 @@ function ShopSection({ products, categories, subCategories }) {
               key={c}
               label={NameUtil.displayName(c)}
               active={c === cat}
-              onClick={() => setCat(c)}
+              onClick={() => { setCat(c); setSub(""); }}
             />
           ))}
         </div>
@@ -118,7 +130,7 @@ function ShopSection({ products, categories, subCategories }) {
             {list.map((p) => (
               <div
                 key={p.id}
-                className="rounded-2xl border shadow-sm overflow-hidden bg-white text-black"
+                className="rounded-2xl shadow-md overflow-hidden bg-white text-black"
               >
                 <Image
                   src={p.image}

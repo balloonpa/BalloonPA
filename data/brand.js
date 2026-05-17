@@ -11,13 +11,13 @@ const BRAND = {
     lineHover: "#7CD67E",
   },
   phoneE164: "+66822435496",
-  phoneDisplay: "082-243-5496",
+  phoneDisplay: "092-293-8299",
   email: "balloonpa.lp@gmail.com",
   city: "BANGKOK",
 
   socials: {
-    instagram: "https://instagram.com/balloonpa.bkk",
-    messenger: "https://www.facebook.com/balloonpa.bkk",
+    instagram: "https://www.instagram.com/balloonpa.bkk.ladprao/",
+    messenger: "https://web.facebook.com/profile.php?id=61580081014446&rdid=JPLB3NYdxV5KoGTf",
     tiktok: "https://www.tiktok.com/@balloonpabkk",
     maps: "",
     lineUrl: "https://lin.ee/4rWUJv9", // ✅ ใช้ลิงก์สั้นแทน
