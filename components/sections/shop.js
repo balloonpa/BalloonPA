@@ -1,8 +1,9 @@
 import Container from "@/components/Container";
 import SectionTitle from "@/components/SectionTitle";
+import ProductDetailModal from "@/components/ProductDetailModal";
+import ProductCard from "@/components/ProductCard";
 import { BRAND } from "@/data/brand";
 import NameUtil from "@/utils/name.util";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -10,6 +11,7 @@ function ShopSection({ products, categories, subCategories }) {
 
   const [cat, setCat] = useState(categories[0] ?? "");
   const [sub, setSub] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const router = useRouter();
 
 
@@ -64,17 +66,6 @@ function ShopSection({ products, categories, subCategories }) {
     );
   };
 
-  // ✅ พรีฟิลข้อความไป LINE OA โดยใช้ลิงก์ lin.ee
-  const lineLinkFor = (p) =>
-    `${BRAND.socials.lineUrl}?text=` +
-    encodeURIComponent(
-      `🎈 สนใจสั่งซื้อสินค้า\n` +
-      `ชื่อสินค้า: ${p.name}\n` +
-      `หมวดหมู่: ${p.category}${p.sub ? " - " + p.sub : ""}\n` +
-      `ราคา: ฿${p.price}\n` +
-      `โปรดแจ้งรายละเอียดเพิ่มเติมครับ 🙏`
-    );
-
   // กรองรายการตามหมวด/ย่อย
   const list = products.filter((p) => {
     if (p.category !== cat) return false;
@@ -128,41 +119,19 @@ function ShopSection({ products, categories, subCategories }) {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {list.map((p) => (
-              <div
+              <ProductCard
                 key={p.id}
-                className="rounded-2xl shadow-md overflow-hidden bg-white text-black"
-              >
-                <Image
-                  src={p.image}
-                  width={0}
-                  height={0}
-                  alt={NameUtil.displayName(p.name)}
-                  className="w-full aspect-[4/3] object-cover"
-                />
-                <div className="p-4">
-                  <div className="text-xs text-gray-500 mb-1">
-                    {NameUtil.displayName(p.category)}
-                    {p.sub ? ` · ${NameUtil.displayName(p.sub)}` : ""}
-                  </div>
-                  <h3 className="font-semibold">{p.name}</h3>
-                  <div className="font-bold mb-3">{p.price} ฿</div>
-                  <a
-                    href={lineLinkFor(p)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-block text-center px-3 py-2 rounded-lg text-white shadow-lg transition hover:scale-[1.02]"
-                    style={{ background: BRAND.colors.line }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = "#06C755"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = BRAND.colors.line; }}
-                  >
-                    แชทสั่งซื้อทาง LINE
-                  </a>
-                </div>
-              </div>
+                product={p}
+                onOpenModal={setSelectedProduct}
+              />
             ))}
           </div>
         )}
       </Container>
+
+      {selectedProduct && (
+        <ProductDetailModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+      )}
     </section>
   );
 }

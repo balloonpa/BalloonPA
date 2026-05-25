@@ -26,9 +26,16 @@ export default function PortfolioPage() {
         <meta property="og:title" content="ผลงาน BalloonPA | ตกแต่งลูกโป่งกรุงเทพฯ" />
         <meta property="og:description" content="ชมผลงานจริงจากลูกค้าของ BalloonPA ร้านลูกโป่งครบวงจรกรุงเทพฯ" />
         <meta property="og:image" content="https://balloonpabkk.com/portfolio1.webp" />
-        <meta property="og:url" content="https://balloonpabkk.com/portfolio" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://balloonpabkk.com/portfolio/" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://balloonpabkk.com/portfolio" />
+        <meta property="og:locale" content="th_TH" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ผลงาน BalloonPA | ตกแต่งลูกโป่งกรุงเทพฯ" />
+        <meta name="twitter:description" content="ชมผลงานจริงจากลูกค้าของ BalloonPA ร้านลูกโป่งครบวงจรกรุงเทพฯ วันเกิด งานแต่ง Backdrop Balloon Arch และอื่นๆ" />
+        <meta name="twitter:image" content="https://balloonpabkk.com/portfolio1.webp" />
+        <link rel="canonical" href="https://balloonpabkk.com/portfolio/" />
       </Head>
 
       <Header />

@@ -13,9 +13,17 @@ export default function BlogPage() {
         <meta name="description" content="รวมบทความและเคล็ดลับการจัดตกแต่งลูกโป่งสำหรับทุกโอกาส วันเกิด งานแต่งงาน งาน Event จาก BalloonPA ร้านลูกโป่งกรุงเทพฯ" key="desc" />
         <meta property="og:title" content="บทความลูกโป่ง | BalloonPA" />
         <meta property="og:description" content="รวมบทความและเคล็ดลับการจัดตกแต่งลูกโป่งสำหรับทุกโอกาสจาก BalloonPA" />
-        <meta property="og:url" content="https://balloonpabkk.com/blog" />
+        <meta property="og:image" content="https://balloonpabkk.com/hero-balloon.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://balloonpabkk.com/blog/" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://balloonpabkk.com/blog" />
+        <meta property="og:locale" content="th_TH" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="บทความลูกโป่ง | BalloonPA" />
+        <meta name="twitter:description" content="รวมบทความและเคล็ดลับการจัดตกแต่งลูกโป่งสำหรับทุกโอกาสจาก BalloonPA" />
+        <meta name="twitter:image" content="https://balloonpabkk.com/hero-balloon.webp" />
+        <link rel="canonical" href="https://balloonpabkk.com/blog/" />
       </Head>
 
       <Header />

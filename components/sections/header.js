@@ -8,13 +8,13 @@ import { NAV_CATEGORIES } from '@/data/categories';
 const NAV_LINKS = [
   { label: 'หน้าแรก', href: '/' },
   { label: 'เกี่ยวกับเรา', href: '/#about' },
-  { label: 'หมวดหมู่สินค้า', href: '/#shop', dropdown: true },
+  { label: 'หมวดหมู่สินค้า', href: '/shop', dropdown: true },
   { label: 'ผลงานของเรา', href: '/portfolio' },
   { label: 'บทความ', href: '/blog' },
   { label: 'คำถามที่พบบ่อย', href: '/faq' },
 ];
 
-const SHOP_PATHS = ['/birthday', '/graduation', '/wedding', '/event', '/baby-shower'];
+const SHOP_PATHS = ['/shop', '/birthday', '/graduation', '/wedding', '/event', '/baby-shower'];
 
 const LINK_BASE = 'text-sm font-medium transition-colors duration-150';
 

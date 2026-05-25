@@ -10,6 +10,7 @@ import ContactSection from "@/components/sections/contact";
 import Head from "next/head";
 import Script from "next/script";
 import { getAllProducts } from "@/utils/products.server";
+import { buildProductListLd } from "@/utils/jsonld";
 
 /** ========= DATA ========= */
 
@@ -23,6 +24,11 @@ export async function getStaticProps() {
 /** ========= APP ========= */
 
 export default function Balloonpa({ initialCategories, initialSubCategories, initialProducts }) {
+  const productListLd = buildProductListLd(initialProducts, {
+    name: 'สินค้าและแพ็กเกจลูกโป่ง BalloonPA',
+    url: '/',
+  });
+
   const localBusinessLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -139,6 +145,13 @@ export default function Balloonpa({ initialCategories, initialSubCategories, ini
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(localBusinessLd).replace(/</g, '\\u003c'),
+        }}
+      />
+      <Script
+        id="ld-product-list"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productListLd).replace(/</g, '\\u003c'),
         }}
       />
       <Header />

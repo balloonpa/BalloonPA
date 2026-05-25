@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import { BRAND } from "@/data/brand";
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer({ hideContact = false }) {
   return (
@@ -39,9 +40,12 @@ function Footer({ hideContact = false }) {
             </div>
           )}
 
-          {/* Copyright */}
-          <div className="text-sm">
-            © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
+          {/* Copyright + Privacy */}
+          <div className="text-sm text-right">
+            <div>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</div>
+            <Link href="/privacy" className="text-xs text-gray-400 hover:underline mt-0.5 inline-block">
+              นโยบายความเป็นส่วนตัว
+            </Link>
           </div>
 
         </div>

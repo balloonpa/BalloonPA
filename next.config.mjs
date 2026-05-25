@@ -10,6 +10,18 @@ const nextConfig = {
 
   // ช่วยให้ลิงก์/ไฟล์ไม่เพี้ยนเวลาอยู่บนโฮสต์ทั่วไป
   trailingSlash: true,
+
+  // Old homepage filter URLs (?cat=...) → permanent redirect to /shop/
+  async redirects() {
+    return [
+      {
+        source: '/',
+        has: [{ type: 'query', key: 'cat' }],
+        destination: '/shop',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

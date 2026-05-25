@@ -1,53 +1,8 @@
 import { useState, useEffect } from 'react';
 import { BRAND } from '@/data/brand';
+import { BRANCHES, nearestBranch } from '@/data/branches';
 
 const PINK = BRAND.colors.pink;
-
-// ── Branch data ──────────────────────────────────────────────────────────────
-const BRANCHES = [
-  {
-    id: 'ladprao',
-    name: 'รัชดา - ลาดพร้าว',
-    lat: 13.802026990503531,
-    lng: 100.5681996355542,
-    embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.067348298539!2d100.5681996355542!3d13.802026990503531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29da11942dba5%3A0xb7f54daeb431acfe!2sBalloonPA%20Balloon%26Event%2024%20Hours%20%40Ladprao!5e0!3m2!1sen!2sth!4v1779018956440!5m2!1sen!2sth',
-  },
-  {
-    id: 'sena',
-    name: 'เสนานิคม - เกษตร',
-    lat: 13.848,
-    lng: 100.566,
-    embedSrc: null,
-  },
-  {
-    id: 'sathorn',
-    name: 'สาทร - วงเวียนใหญ่',
-    lat: 13.721612199999996,
-    lng: 100.3534778433594,
-    embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124030.328533947!2d100.3534778433594!3d13.721612199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e299beaf4a7b3b%3A0xc9fd6bf216154c03!2zQmFsbG9vblBBIEJhbGxvb24mRXZlbnQgMjQgSG91ciBAIOC4quC4suC4l-C4oyAtIOC4p-C4h-C5gOC4p-C4teC4ouC4meC5g-C4q-C4jeC5iA!5e0!3m2!1sen!2sth!4v1779019090085!5m2!1sen!2sth',
-  },
-];
-
-// Haversine distance in km
-function distanceKm(lat1, lng1, lat2, lng2) {
-  const R = 6371;
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLng = (lng2 - lng1) * Math.PI / 180;
-  const a =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-    Math.sin(dLng / 2) ** 2;
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-}
-
-function nearestBranch(userLat, userLng) {
-  const locatable = BRANCHES.filter((b) => b.lat !== null);
-  return locatable.reduce((best, b) => {
-    return distanceKm(userLat, userLng, b.lat, b.lng) <
-      distanceKm(userLat, userLng, best.lat, best.lng)
-      ? b : best;
-  }, locatable[0]);
-}
 
 function mapSrc(branch) {
   if (branch.embedSrc) return branch.embedSrc;
@@ -58,6 +13,7 @@ function mapSrc(branch) {
 const SOCIALS = [
   {
     label: 'LINE',
+    handle: '@balloonpa.th',
     href: BRAND.socials.lineUrl,
     bg: '#06C755',
     icon: (
@@ -68,6 +24,7 @@ const SOCIALS = [
   },
   {
     label: 'Instagram',
+    handle: '@balloonpa.bkk.ladprao',
     href: BRAND.socials.instagram,
     bg: 'radial-gradient(circle at 30% 110%, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
     icon: (
@@ -78,6 +35,7 @@ const SOCIALS = [
   },
   {
     label: 'Facebook',
+    handle: 'Balloon PA',
     href: BRAND.socials.messenger,
     bg: '#1877F2',
     icon: (
@@ -88,6 +46,7 @@ const SOCIALS = [
   },
   {
     label: 'TikTok',
+    handle: '@balloonpabkk.ladprao',
     href: BRAND.socials.tiktok,
     bg: '#000000',
     icon: (
@@ -157,11 +116,14 @@ export default function ContactSection() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3 rounded-2xl text-white font-semibold text-sm shadow-sm transition hover:scale-[1.03] hover:shadow-md"
+              className="flex items-center gap-3 px-4 py-3 rounded-2xl text-white shadow-sm transition hover:scale-[1.03] hover:shadow-md"
               style={{ background: s.bg }}
             >
               {s.icon}
-              {s.label}
+              <div className="flex flex-col leading-tight">
+                <span className="font-semibold text-sm">{s.label}</span>
+                <span className="text-xs opacity-75">{s.handle}</span>
+              </div>
             </a>
           ))}
         </div>

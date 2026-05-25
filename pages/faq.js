@@ -29,9 +29,17 @@ export default function FaqPage() {
         />
         <meta property="og:title" content="คำถามที่พบบ่อย | BalloonPA" />
         <meta property="og:description" content="รวมคำถามที่พบบ่อยเกี่ยวกับบริการลูกโป่ง BalloonPA ราคา การจัดส่ง การสั่งงาน และอื่นๆ" />
-        <meta property="og:url" content="https://balloonpabkk.com/faq" />
+        <meta property="og:image" content="https://balloonpabkk.com/hero-balloon.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://balloonpabkk.com/faq/" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://balloonpabkk.com/faq" />
+        <meta property="og:locale" content="th_TH" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="คำถามที่พบบ่อย | BalloonPA ร้านลูกโป่งกรุงเทพฯ" />
+        <meta name="twitter:description" content="รวมคำถามที่พบบ่อยเกี่ยวกับบริการลูกโป่ง BalloonPA ราคา การจัดส่ง การสั่งงาน และอื่นๆ" />
+        <meta name="twitter:image" content="https://balloonpabkk.com/hero-balloon.webp" />
+        <link rel="canonical" href="https://balloonpabkk.com/faq/" />
       </Head>
 
       <Script

@@ -2,10 +2,13 @@ import FloatingContacts from '@/components/FloatingContacts';
 import Container from '@/components/Container';
 import Footer from '@/components/sections/footer';
 import Header from '@/components/sections/header';
+import ProductDetailModal from '@/components/ProductDetailModal';
+import ProductCard from '@/components/ProductCard';
 import { BRAND } from '@/data/brand';
-import Image from 'next/image';
 import Head from 'next/head';
 import Script from 'next/script';
+import { useState } from 'react';
+import { buildProductListLd } from '@/utils/jsonld';
 
 /**
  * Shared layout for all occasion landing pages (birthday, graduation, wedding, etc.)
@@ -17,12 +20,8 @@ import Script from 'next/script';
  *   products: [{ id, name, price, image }]
  */
 export default function OccasionPageLayout({ meta, hero, keyword, products }) {
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const lineUrl = `${BRAND.socials.lineUrl}?text=${encodeURIComponent(hero.lineText)}`;
-
-  const lineLinkFor = (p) =>
-    `${BRAND.socials.lineUrl}?text=${encodeURIComponent(
-      `🎈 สนใจสั่งซื้อ\nชื่อสินค้า: ${p.name}\nราคา: ฿${p.price}\nโปรดแจ้งรายละเอียดเพิ่มเติมครับ 🙏`
-    )}`;
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -32,9 +31,16 @@ export default function OccasionPageLayout({ meta, hero, keyword, products }) {
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content={`https://balloonpabkk.com${meta.ogImage}`} />
-        <meta property="og:url" content={`https://balloonpabkk.com${meta.path}`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content={`https://balloonpabkk.com${meta.path}/`} />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href={`https://balloonpabkk.com${meta.path}`} />
+        <meta property="og:locale" content="th_TH" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={`https://balloonpabkk.com${meta.ogImage}`} />
+        <link rel="canonical" href={`https://balloonpabkk.com${meta.path}/`} />
       </Head>
 
       {meta.jsonLd && (
@@ -43,6 +49,17 @@ export default function OccasionPageLayout({ meta, hero, keyword, products }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(meta.jsonLd).replace(/</g, '\\u003c'),
+          }}
+        />
+      )}
+      {products.length > 0 && (
+        <Script
+          id={`ld-products-${meta.path.replace(/\//g, '')}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              buildProductListLd(products, { name: `แพ็กเกจ${hero.badge}`, url: meta.path })
+            ).replace(/</g, '\\u003c'),
           }}
         />
       )}
@@ -97,31 +114,12 @@ export default function OccasionPageLayout({ meta, hero, keyword, products }) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {products.map((p) => (
-                <div
+                <ProductCard
                   key={p.id}
-                  className="rounded-2xl border shadow-sm overflow-hidden bg-white"
-                >
-                  <Image
-                    src={p.image}
-                    width={0}
-                    height={0}
-                    alt={`${p.name} ลูกโป่ง${keyword} — BalloonPA กรุงเทพฯ`}
-                    className="w-full aspect-[4/3] object-cover"
-                  />
-                  <div className="p-4">
-                    <div className="font-semibold mb-1">{p.name}</div>
-                    <div className="font-bold mb-3">฿{p.price}</div>
-                    <a
-                      href={lineLinkFor(p)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-block text-center px-3 py-2 rounded-lg text-white transition hover:scale-[1.02]"
-                      style={{ background: BRAND.colors.line }}
-                    >
-                      สั่งงาน LINE
-                    </a>
-                  </div>
-                </div>
+                  product={p}
+                  onOpenModal={setSelectedProduct}
+                  keyword={keyword}
+                />
               ))}
             </div>
           </Container>
@@ -171,6 +169,10 @@ export default function OccasionPageLayout({ meta, hero, keyword, products }) {
 
       <Footer />
       <FloatingContacts />
+
+      {selectedProduct && (
+        <ProductDetailModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+      )}
     </div>
   );
 }
