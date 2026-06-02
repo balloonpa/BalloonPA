@@ -1,4 +1,4 @@
-import OccasionPageLayout from '@/components/OccasionPageLayout';
+import ProductPageLayout from '@/components/ProductPageLayout';
 import { getProductsBySubDir } from '@/utils/products.server';
 
 const META = {
@@ -33,6 +33,6 @@ export async function getStaticProps() {
 
 export default function BirthdayPage({ products }) {
   return (
-    <OccasionPageLayout meta={META} hero={HERO} keyword="วันเกิด" products={products} />
+    <ProductPageLayout meta={META} hero={HERO} keyword="วันเกิด" products={products} />
   );
 }

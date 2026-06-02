@@ -2,25 +2,21 @@ import FloatingContacts from '@/components/FloatingContacts';
 import Container from '@/components/Container';
 import Footer from '@/components/sections/footer';
 import Header from '@/components/sections/header';
-import ProductDetailModal from '@/components/ProductDetailModal';
-import ProductCard from '@/components/ProductCard';
 import { BRAND } from '@/data/brand';
 import Head from 'next/head';
 import Script from 'next/script';
-import { useState } from 'react';
-import { buildProductListLd } from '@/utils/jsonld';
 
 /**
- * Shared layout for all occasion landing pages (birthday, graduation, wedding, etc.)
+ * Parent layout shared by ProductPageLayout and ContentPageLayout.
+ * Handles Head/meta, Header, Hero, Why BalloonPA, Service Areas, Footer.
+ * `children` is rendered between the Hero and the Why BalloonPA section.
  *
  * Props:
- *   meta:    { title, description, ogImage, path, jsonLd? }
- *   hero:    { badge, h1, description, lineText, productsTitle }
- *   keyword: keyword used in product alt texts (e.g. "วันเกิด")
- *   products: [{ id, name, price, image }]
+ *   meta:  { title, description, ogImage, path, jsonLd? }
+ *   hero:  { badge, h1, description, lineText }
+ *   children — middle content slot
  */
-export default function OccasionPageLayout({ meta, hero, keyword, products }) {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+export default function BasePageLayout({ meta, hero, children }) {
   const lineUrl = `${BRAND.socials.lineUrl}?text=${encodeURIComponent(hero.lineText)}`;
 
   return (
@@ -45,21 +41,10 @@ export default function OccasionPageLayout({ meta, hero, keyword, products }) {
 
       {meta.jsonLd && (
         <Script
-          id={`ld-${meta.path.replace(/\//g, '')}`}
+          id={`ld-${meta.path.replace(/\//g, '-')}`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(meta.jsonLd).replace(/</g, '\\u003c'),
-          }}
-        />
-      )}
-      {products.length > 0 && (
-        <Script
-          id={`ld-products-${meta.path.replace(/\//g, '')}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              buildProductListLd(products, { name: `แพ็กเกจ${hero.badge}`, url: meta.path })
-            ).replace(/</g, '\\u003c'),
           }}
         />
       )}
@@ -67,15 +52,10 @@ export default function OccasionPageLayout({ meta, hero, keyword, products }) {
       <Header />
 
       {/* ── Hero ── */}
-      <section
-        className="relative py-20 overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #fff0f5 0%, #e8f6ff 100%)' }}
-      >
+      <section className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #fff0f5 0%, #e8f6ff 100%)' }}>
         <Container>
           <div className="max-w-2xl">
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow border text-sm mb-6 text-gray-700"
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow border text-sm mb-6 text-gray-700">
               🎈 BalloonPA · {hero.badge}
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-black">
@@ -104,27 +84,8 @@ export default function OccasionPageLayout({ meta, hero, keyword, products }) {
         </Container>
       </section>
 
-      {/* ── Products ── */}
-      {products.length > 0 && (
-        <section className="py-16">
-          <Container>
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-extrabold text-black">{hero.productsTitle}</h2>
-              <p className="mt-2 text-gray-500">เลือกแพ็กเกจที่ถูกใจ สั่งงานผ่าน LINE ได้เลย</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {products.map((p) => (
-                <ProductCard
-                  key={p.id}
-                  product={p}
-                  onOpenModal={setSelectedProduct}
-                  keyword={keyword}
-                />
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
+      {/* ── Middle content slot ── */}
+      {children}
 
       {/* ── Why Us ── */}
       <section className="py-12 bg-gray-50">
@@ -169,10 +130,6 @@ export default function OccasionPageLayout({ meta, hero, keyword, products }) {
 
       <Footer />
       <FloatingContacts />
-
-      {selectedProduct && (
-        <ProductDetailModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
-      )}
     </div>
   );
 }

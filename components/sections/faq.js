@@ -44,10 +44,10 @@ export function FaqSection() {
           {FAQ_ITEMS.map((item, i) => {
             const isOpen = open === i;
             return (
-              <div key={i} className="bg-white rounded-2xl shadow-sm border overflow-hidden">
+              <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full text-left px-6 py-5 flex justify-between items-center gap-4 font-semibold"
+                  className="w-full text-left px-6 py-5 flex justify-between items-center gap-4 font-semibold text-gray-900"
                   aria-expanded={isOpen}
                 >
                   <span>{item.q}</span>
@@ -61,11 +61,13 @@ export function FaqSection() {
                     +
                   </span>
                 </button>
-                {isOpen && (
-                  <div className="px-6 pb-5 text-gray-600 leading-relaxed text-sm border-t pt-4">
-                    {item.a}
+                <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-5 text-gray-500 leading-relaxed text-sm border-t border-gray-100 pt-4">
+                      {item.a}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

@@ -16,7 +16,7 @@ export const NAV_CATEGORIES = [
       { label: 'Wedding',               href: '/shop?cat=2.Occasion&sub=3.Wedding' },
       { label: 'Event',                 href: '/shop?cat=2.Occasion&sub=4.Event' },
       { label: 'Welcome Baby',          href: '/shop?cat=2.Occasion&sub=5.Welcome_Baby' },
-      { label: 'Special Days & Festival', href: '/shop?cat=2.Occasion&sub=6.Special_Days_%26_Festival' },
+      { label: 'Special Days', href: '/shop?cat=2.Occasion&sub=6.Special_Days' },
     ],
   },
   {

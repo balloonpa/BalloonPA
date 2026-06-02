@@ -11,6 +11,7 @@ import Head from "next/head";
 import Script from "next/script";
 import { getAllProducts } from "@/utils/products.server";
 import { buildProductListLd } from "@/utils/jsonld";
+import { BRANCHES } from "@/data/branches";
 
 /** ========= DATA ========= */
 
@@ -28,6 +29,41 @@ export default function Balloonpa({ initialCategories, initialSubCategories, ini
     name: 'สินค้าและแพ็กเกจลูกโป่ง BalloonPA',
     url: '/',
   });
+
+  const BRANCH_LOCALITY = {
+    ladprao: 'Lat Phrao, Bangkok',
+    sena: 'Sena Nikhom, Bangkok',
+    sathorn: 'Sathon, Bangkok',
+  };
+
+  const branchesLd = {
+    '@context': 'https://schema.org',
+    '@graph': BRANCHES.map((b) => ({
+      '@type': 'LocalBusiness',
+      '@id': `https://balloonpabkk.com/#branch-${b.id}`,
+      'name': `BalloonPA ${b.name}`,
+      'url': 'https://balloonpabkk.com/',
+      'telephone': '+66822435496',
+      'image': ['https://balloonpabkk.com/web_Icon.webp'],
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': BRANCH_LOCALITY[b.id] ?? 'Bangkok',
+        'addressRegion': 'Krung Thep Maha Nakhon',
+        'addressCountry': 'TH',
+      },
+      'geo': {
+        '@type': 'GeoCoordinates',
+        'latitude': String(b.lat),
+        'longitude': String(b.lng),
+      },
+      'openingHoursSpecification': [{
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+        'opens': '00:00',
+        'closes': '23:59',
+      }],
+    })),
+  };
 
   const localBusinessLd = {
     "@context": "https://schema.org",
@@ -154,11 +190,32 @@ export default function Balloonpa({ initialCategories, initialSubCategories, ini
           __html: JSON.stringify(productListLd).replace(/</g, '\\u003c'),
         }}
       />
+      <Script
+        id="ld-branches"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(branchesLd).replace(/</g, '\\u003c'),
+        }}
+      />
       <Header />
       <Hero />
       <OccasionsNav />
       <About />
-      <ShopSection products={initialProducts} categories={initialCategories} subCategories={initialSubCategories} />
+      <ShopSection
+        products={initialProducts}
+        categories={initialCategories}
+        subCategories={initialSubCategories}
+        flatFilters={[
+          { label: 'Recommendation', cat: '1.Recommendation', sub: '' },
+          { label: 'ทั้งหมด',        cat: '2.Occasion',       sub: '' },
+          { label: 'Birthday',       cat: '2.Occasion', sub: '1.Birthday' },
+          { label: 'Graduation',     cat: '2.Occasion', sub: '2.Graduation' },
+          { label: 'Wedding',        cat: '2.Occasion', sub: '3.Wedding' },
+          { label: 'Event',          cat: '2.Occasion', sub: '4.Event' },
+          { label: 'Welcome Baby',   cat: '2.Occasion', sub: '5.Welcome_Baby' },
+          { label: 'Special Days',   cat: '2.Occasion', sub: '6.Special_Days' },
+        ]}
+      />
       <ContactSection />
       <Footer />
 

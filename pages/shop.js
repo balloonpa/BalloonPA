@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Header from '@/components/sections/header';
@@ -10,6 +11,7 @@ import ProductCard from '@/components/ProductCard';
 import { BRAND } from '@/data/brand';
 import NameUtil from '@/utils/name.util';
 import { getAllProducts } from '@/utils/products.server';
+import { buildProductListLd } from '@/utils/jsonld';
 
 export async function getStaticProps() {
   const { categories, subCatagories, products } = await getAllProducts();
@@ -17,6 +19,11 @@ export async function getStaticProps() {
 }
 
 export default function ShopPage({ categories, subCatagories, products }) {
+  const productListLd = buildProductListLd(products, {
+    name: 'สินค้าและแพ็กเกจลูกโป่ง BalloonPA',
+    url: '/shop/',
+  });
+
   const [activeCat, setActiveCat] = useState(categories[0] ?? '');
   const [activeSub, setActiveSub] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -65,6 +72,14 @@ export default function ShopPage({ categories, subCatagories, products }) {
         <meta name="twitter:image" content="https://balloonpabkk.com/hero-balloon.webp" />
         <link rel="canonical" href="https://balloonpabkk.com/shop/" />
       </Head>
+
+      <Script
+        id="ld-shop-products"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productListLd).replace(/</g, '\\u003c'),
+        }}
+      />
 
       <Header />
 

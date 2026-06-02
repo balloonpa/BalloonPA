@@ -43,20 +43,23 @@ function FloatingContacts() {
       className={`
         w-12 h-12 rounded-full flex items-center justify-center
         shadow-xl ring-1 ring-black/5
-        transform transition duration-300
+        transition-all duration-300
         hover:scale-110 hover:shadow-2xl
-        opacity-0 translate-y-2
-        ${open ? "" : "pointer-events-none"}
-        ${open ? "opacity-100 translate-y-0" : firstPress ? "contact-down" : ""}
+        ${open
+          ? 'opacity-100 translate-y-0'
+          : firstPress
+            ? 'contact-down pointer-events-none'
+            : 'opacity-0 translate-y-6 pointer-events-none'
+        }
       `}
-      style={{ background: bg, transitionDelay: `${delay}ms` }}
+      style={{ background: bg, transitionDelay: open ? `${delay}ms` : '0ms' }}
     >
       {children}
     </a>
   );
 
   return (
-    <div className="fixed right-4 z-50" style={{ bottom: bottomOffset }}>
+    <div className="fixed right-4 z-30" style={{ bottom: bottomOffset, transition: 'bottom 0.25s ease' }}>
       <button
         onClick={() => {
           setOpen(v => !v);

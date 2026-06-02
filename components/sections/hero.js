@@ -79,14 +79,14 @@ function Hero() {
       {/* ปุ่มเลื่อนซ้าย/ขวา */}
       <button
         onClick={() => setIndex((index - 1 + heroImages.length) % heroImages.length)}
-        className="absolute cursor-pointer left-4 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full"
+        className="absolute z-20 cursor-pointer left-4 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full"
         aria-label="Previous"
       >
         ‹
       </button>
       <button
         onClick={() => setIndex((index + 1) % heroImages.length)}
-        className="absolute cursor-pointer right-4 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full"
+        className="absolute z-20 cursor-pointer right-4 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full"
         aria-label="Next"
       >
         ›

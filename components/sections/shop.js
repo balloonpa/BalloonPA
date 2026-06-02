@@ -7,18 +7,23 @@ import NameUtil from "@/utils/name.util";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-function ShopSection({ products, categories, subCategories }) {
+function ShopSection({ products, categories, subCategories, flatFilters }) {
 
   const [cat, setCat] = useState(categories[0] ?? "");
   const [sub, setSub] = useState("");
+  const [flatIdx, setFlatIdx] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const router = useRouter();
-
 
   // อ่าน ?cat=&sub= จาก URL แล้วตั้งค่า filter
   useEffect(() => {
     if (!router.isReady) return;
     const { cat: qCat, sub: qSub } = router.query;
+    if (flatFilters) {
+      const idx = flatFilters.findIndex(f => f.cat === qCat && f.sub === (qSub ?? ''));
+      if (idx !== -1) setFlatIdx(idx);
+      return;
+    }
     if (qCat && categories.includes(qCat)) {
       setCat(qCat);
       if (qSub && subCategories[qCat]?.includes(qSub)) {
@@ -67,7 +72,13 @@ function ShopSection({ products, categories, subCategories }) {
   };
 
   // กรองรายการตามหมวด/ย่อย
+  const activeFilter = flatFilters ? flatFilters[flatIdx] : null;
   const list = products.filter((p) => {
+    if (activeFilter) {
+      if (p.category !== activeFilter.cat) return false;
+      if (activeFilter.sub) return (p.sub || '') === activeFilter.sub;
+      return true;
+    }
     if (p.category !== cat) return false;
     if (!sub) return true;
     return (p.sub || "") === sub;
@@ -78,37 +89,48 @@ function ShopSection({ products, categories, subCategories }) {
       <Container className="py-12">
         <SectionTitle sub="เลือกหมวดหมู่เพื่อดูเซ็ตยอดนิยม">Shop</SectionTitle>
 
-        {/* หมวดหลัก */}
-        <div className="flex gap-3 overflow-auto pb-2 mb-4 justify-center">
-          {categories.map((c) => (
-            <Chip
-              key={c}
-              label={NameUtil.displayName(c)}
-              active={c === cat}
-              onClick={() => { setCat(c); setSub(""); }}
-            />
-          ))}
-        </div>
-
-        {/* เมนูย่อย */}
-        {subCategories[cat] && subCategories[cat].length > 0 && (
-          <div className="flex gap-2 overflow-auto pb-2 mb-6 justify-center">
-            <Chip
-              small
-              label="ทั้งหมด"
-              active={sub === ""}
-              onClick={() => setSub("")}
-            />
-            {subCategories[cat].map((s) => (
+        {flatFilters ? (
+          /* ── Flat single-row chips ── */
+          <div className="flex gap-3 overflow-auto pb-2 mb-6 justify-center">
+            {flatFilters.map((f, i) => (
               <Chip
-                small
-                key={s}
-                label={NameUtil.displayName(s)}
-                active={sub === s}
-                onClick={() => setSub(s)}
+                key={f.label}
+                label={f.label}
+                active={i === flatIdx}
+                onClick={() => setFlatIdx(i)}
               />
             ))}
           </div>
+        ) : (
+          <>
+            {/* หมวดหลัก */}
+            <div className="flex gap-3 overflow-auto pb-2 mb-4 justify-center">
+              {categories.map((c) => (
+                <Chip
+                  key={c}
+                  label={NameUtil.displayName(c)}
+                  active={c === cat}
+                  onClick={() => { setCat(c); setSub(""); }}
+                />
+              ))}
+            </div>
+
+            {/* เมนูย่อย */}
+            {subCategories[cat] && subCategories[cat].length > 0 && (
+              <div className="flex gap-2 overflow-auto pb-2 mb-6 justify-center">
+                <Chip small label="ทั้งหมด" active={sub === ""} onClick={() => setSub("")} />
+                {subCategories[cat].map((s) => (
+                  <Chip
+                    small
+                    key={s}
+                    label={NameUtil.displayName(s)}
+                    active={sub === s}
+                    onClick={() => setSub(s)}
+                  />
+                ))}
+              </div>
+            )}
+          </>
         )}
 
         {/* รายการสินค้า */}

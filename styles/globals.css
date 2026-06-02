@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
@@ -26,9 +27,6 @@ body {
 }
 
 .contact-up {
-    animation-name: animation-fade-in ;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    animation-duration: 1s;
     pointer-events: auto;
 }
 
@@ -47,27 +45,16 @@ body {
     bottom: -200%;
     max-height: 40%;
   }
-  20% {
-    z-index: 91;
-  }
-
-  40% {
-    z-index: 101;
-  }
-
-  60% {
-    z-index: 999;
-  }
-
-  80% {
-    z-index: 1099;
-  }
-
+  20% { z-index: 91; }
+  40% { z-index: 101; }
+  60% { z-index: 999; }
+  80% { z-index: 1099; }
   100% {
     -webkit-transform-origin-y: 100%;
     pointer-events:none;
   }
 }
+
 
   @keyframes animation-fade-out {
   0% {
