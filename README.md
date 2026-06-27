@@ -124,8 +124,6 @@ Developer: **Suphawit Panouthai**
 
 📱 Phone : 098-747-9536
 
-📧 Email: [suphawit.panouthai@gmail.com](mailto:suphawit.panouthai@gmail.com)
+📧 Email : [suphawit.panouthai@gmail.com](mailto:suphawit.panouthai@gmail.com)
 
-🌐 Portfolio: https://balloonpabkk.com
-
-💻 GitHub : https://github.com/balloonpa
+🌐 Website : https://balloonpabkk.com
