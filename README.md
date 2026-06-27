@@ -1,40 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🎈 BalloonPA Official Website
 
-## Getting Started
+Official website for **BalloonPA Balloon & Event 24 Hour**, a balloon decoration and event service business. This project was designed and developed to transform an offline business into a complete digital platform, allowing customers to browse products, submit inquiries, and place orders online.
 
-First, run the development server:
+## 🌐 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+https://balloonpabkk.com
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 📌 Project Overview
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This website was built to improve customer experience and streamline business operations. It serves as the primary online platform for showcasing balloon products, event decoration services, and promotional campaigns while integrating analytics and automation tools for business growth.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Features
 
-## Learn More
+* Responsive design for Desktop, Tablet, and Mobile
+* Product categories and service pages
+* SEO optimized pages
+* Google Analytics 4 integration
+* Google Tag Manager implementation
+* Meta Pixel integration
+* Contact and inquiry system
+* Google Apps Script automation
+* Fast loading and user-friendly interface
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 🛠 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend
 
-## Deploy on Vercel
+* HTML5
+* CSS3
+* JavaScript
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Analytics & Marketing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+* Google Analytics 4 (GA4)
+* Google Tag Manager (GTM)
+* Meta Pixel
+
+### Automation
+
+* Google Apps Script
+
+### Deployment
+
+* GitHub
+* Web Hosting
+
+---
+
+## 💼 My Responsibilities
+
+I independently handled the entire development process, including:
+
+* Website Design
+* Frontend Development
+* Responsive UI Development
+* SEO Optimization
+* Google Analytics & GTM Setup
+* Meta Pixel Integration
+* Google Apps Script Automation
+* Website Deployment
+* Website Maintenance
+
+---
+
+## 📷 Screenshots
+
+### Home Page
+
+(Add Screenshot)
+
+### Product Page
+
+(Add Screenshot)
+
+### Category Page
+
+(Add Screenshot)
+
+### Contact Page
+
+(Add Screenshot)
+
+---
+
+## 📈 Business Impact
+
+* Increased online visibility through SEO optimization
+* Improved customer inquiry process
+* Reduced manual operations with workflow automation
+* Enhanced marketing performance using analytics and conversion tracking
+* Supported business growth through digital transformation
+
+---
+
+## 🔮 Future Improvements
+
+* Online Payment Gateway
+* Customer Account System
+* Order Tracking
+* Admin Dashboard
+* Inventory Management
+* Booking System
+
+---
+
+## 📫 Contact
+
+Developer: **Suphawit Panouthai**
+
+Email: [suphawit.panouthai@gmail.com](mailto:suphawit.panouthai@gmail.com)
+
+Website: https://balloonpabkk.com
+
