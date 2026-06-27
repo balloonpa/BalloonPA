@@ -122,7 +122,10 @@ I independently handled the entire development process, including:
 
 Developer: **Suphawit Panouthai**
 
-Email: [suphawit.panouthai@gmail.com](mailto:suphawit.panouthai@gmail.com)
+📱 Phone : 098-747-9536
 
-Website: https://balloonpabkk.com
+📧 Email: [suphawit.panouthai@gmail.com](mailto:suphawit.panouthai@gmail.com)
 
+🌐 Portfolio: https://balloonpabkk.com
+
+💻 GitHub : https://github.com/balloonpa
